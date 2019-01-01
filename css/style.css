@@ -116,6 +116,7 @@ body{
 @media (max-width: 600px) {
     .calculator-container {
         padding:0;
+        height: 100%;
     }
 
     .calculator-container .card{
@@ -124,5 +125,23 @@ body{
         height:100%;
         border-radius:0;
         box-shadow:none !important;
+    }
+    
+}
+
+@media screen and (min-width: 680px) and (orientation: portrait) {
+    .calculator-container {
+        padding: 60px;
+    }
+    .calculator-container .card {
+        max-width: 100%;
+    }
+    .calculator-container .card .body button {
+        min-height: 220px;
+        font-size: 48px;
+    }
+    .calculator-container .card .header #resultDisplay {
+        font-size: 4em;
+        top: 30px;
     }
 }
