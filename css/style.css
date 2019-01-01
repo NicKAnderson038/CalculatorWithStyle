@@ -9,6 +9,7 @@ body{
     height:100vh;
     overflow: hidden;
     font-family: Arial;
+    touch-action: manipulation;
 }
 
 
