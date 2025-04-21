@@ -4,6 +4,10 @@ on:
   push:
     branches: [master] # Or your desired branch
 
+permissions:
+  id-token: write
+  pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
