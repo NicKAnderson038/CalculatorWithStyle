@@ -10,6 +10,9 @@ body{
     overflow: hidden;
     font-family: Arial;
     touch-action: manipulation;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
