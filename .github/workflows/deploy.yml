@@ -9,17 +9,35 @@ permissions:
   pages: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
-      - name: Deploy to gh-pages
-        uses: actions/deploy-pages@v1
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Or provide a personal access token
-          # If your build output is in a folder other than the root, specify it here
-          branch: gh-pages
-          # The directory where your static files are located
-          # If it's the root of your repository, you can omit this
-          target_directory: index.html
+          path: ./
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    # steps:
+    #   - name: Deploy to GitHub Pages
+    #     id: deployment
+    #     uses: actions/deploy-pages@v4
+    # steps:
+    #   - name: Checkout branch
+    #     uses: actions/checkout@v3
+    #   - name: Deploy to gh-pages
+    #     uses: actions/deploy-pages@v1
+    #     with:
+    #       github_token: ${{ secrets.GITHUB_TOKEN }} # Or provide a personal access token
+    #       # If your build output is in a folder other than the root, specify it here
+    #       branch: gh-pages
+    #       # The directory where your static files are located
+    #       # If it's the root of your repository, you can omit this
+    #       target_directory: index.html

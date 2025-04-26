@@ -1,0 +1,23 @@
+{
+    "name": "calculatorwithstyle",
+    "version": "1.0.0",
+    "scripts": {
+        "server": "npx http-server --proxy http://localhost:8080 -o ./index.html",
+        "package:check": "npx npm-check-updates",
+        "package:updates": "npx npm-check-updates -i --format group"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NicKAnderson038/CalculatorWithStyle.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/NicKAnderson038/CalculatorWithStyle/issues"
+    },
+    "homepage": "https://github.com/NicKAnderson038/CalculatorWithStyle#readme",
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "npm-check-updates": "^18.0.1"
+    }
+}
